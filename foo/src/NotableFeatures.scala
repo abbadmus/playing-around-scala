@@ -32,8 +32,16 @@ object NotableFeatures {
       }
 
       println(modulus)
-
     }
+
+    case class Person(name: String, title: String)
+
+    def greeting(p: Person) = p match {
+      case Person(s"$firstName, $lastName", title) => println(s"Hello $title $lastName")
+      case Person(name, title) => println(s"Hello $title $name")
+    }
+
+    greeting(Person("Abdulwaheed", "Mr"))
 
 
   }
