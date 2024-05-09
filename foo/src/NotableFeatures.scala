@@ -11,6 +11,30 @@ object NotableFeatures {
     getDayMonthYear("10-12-1994")
     getDayMonthYear("12-1994")
 
+    // patter matching
+    def dayOfWeek(x: Int) = x match {
+      case 1 => "Mon"; case 2 => "Tue";
+      case 3 => "Wed"; case 4 => "Thu";
+      case 5 => "Fri"; case 6 => "Sat";
+      case 7 => "Sun"; case _ => "Unknown";
+    }
+
+    println(dayOfWeek(2))
+    println(dayOfWeek(9))
+    println(dayOfWeek(3))
+
+    for(i <- Range(0, 100)){
+      val modulus: String = (i % 3, i % 5) match {
+        case (0, 0) => "FizzBuzz"
+        case (0, _) => "Fizz"
+        case (_, 0) => "Buzz"
+        case (_, _) => i.toString
+      }
+
+      println(modulus)
+
+    }
+
 
   }
 
