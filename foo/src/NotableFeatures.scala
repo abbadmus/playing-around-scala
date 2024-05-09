@@ -37,11 +37,27 @@ object NotableFeatures {
     case class Person(name: String, title: String)
 
     def greeting(p: Person) = p match {
-      case Person(s"$firstName, $lastName", title) => println(s"Hello $title $lastName")
+      case Person(s"$firstName $lastName", title) => println(s"Hello $title $lastName")
       case Person(name, title) => println(s"Hello $title $name")
     }
 
+    println()
     greeting(Person("Abdulwaheed", "Mr"))
+    greeting(Person("Abdulwaheed Badmus", "Mr"))
+
+    // destructure
+    val person = Person("Abdul", "Mr")
+    val Person(x, y) = person
+
+    println()
+    println(x)
+    println(y)
+
+    // flip
+    val s"$first $second" = "hello world"
+
+    val flipped = s"$second $first"
+    println(flipped)
 
 
   }
