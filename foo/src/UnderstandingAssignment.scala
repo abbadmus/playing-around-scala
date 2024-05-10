@@ -26,9 +26,12 @@ object UnderstandingAssignment {
 
   }
 
-  import StringParser.IntParser
 
-  println(fromStringParser("45"))
+  import StringParser.BoolParser
+
+
+  println(fromStringParser("true"))
+  //TODO
 
 
 }
