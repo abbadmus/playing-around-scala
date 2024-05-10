@@ -186,6 +186,8 @@ object CollectsOps {
     println(myMap.get(1))
     println(myMap.get(12))
     println(myMap.contains(43))
+    myMap.getOrElse(4, 5)
+    myMap.get(3)
 
     Map.newBuilder[Int, String]
 

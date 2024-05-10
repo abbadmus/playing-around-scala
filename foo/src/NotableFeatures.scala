@@ -59,6 +59,32 @@ object NotableFeatures {
     val flipped = s"$second $first"
     println(flipped)
 
+    def retry[T](maxRetries: Int)(operation: => T): T = {
+      var attempts = 0
+      var result: Option[T] = None
+
+      while (result.isEmpty) {
+        try {
+          result = Some(operation) // If this succeeds, loop exits
+        } catch {
+          case e: Throwable => // If `operation` throws an exception, handle it
+            attempts += 1
+
+            if (attempts > maxRetries) {
+              throw e // Exceeded max retries, rethrow the exception
+            } else {
+              println(s"Failed, retry #$attempts") // Log retry attempts
+            }
+        }
+      }
+
+      result.get // Return the successful result
+    }
+
+    val httpbin = "https://httpbin.org"
+
+
+
 
   }
 
