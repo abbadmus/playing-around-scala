@@ -154,14 +154,14 @@ object CollectsOps {
     }
 
     val myVec = Vector.newBuilder[Int]
-    val myVec2 =  myVec += 22
+    val myVec2 = myVec += 22
 
-    val myVec3 = Vector(1,2,3,4,5, 3,834,23,2)
+    val myVec3 = Vector(1, 2, 3, 4, 5, 3, 834, 23, 2)
 
     val myVec4 = Vector.tabulate(3)(n => n)
     println(myVec4)
 
-    val myVec5 = myVec3.map(_ * 3).filter( x => x % 2 == 0).take(3)
+    val myVec5 = myVec3.map(_ * 3).filter(x => x % 2 == 0).take(3)
     println(myVec5)
 
     val myVec6 = myVec3.view.map(_ * 3).filter(x => x % 2 == 0).take(3).toVector
@@ -171,18 +171,18 @@ object CollectsOps {
 
     myVec.addOne(1)
 
-    val mySet = Set(1,2,5,3,6,3)
+    val mySet = Set(1, 2, 5, 3, 6, 3)
 
     val mySet2 = Set.newBuilder[Int]
 
     mySet2 += 2
     mySet2 += 5
 
-    for(i <- mySet) println(i)
+    for (i <- mySet) println(i)
     println()
     println()
 
-    val myMap: Map[Int, Int] = Map((1,4), (2,5), (344, 543))
+    val myMap: Map[Int, Int] = Map((1, 4), (2, 5), (344, 543))
     println(myMap.get(1))
     println(myMap.get(12))
     println(myMap.contains(43))
@@ -192,33 +192,30 @@ object CollectsOps {
     Map.newBuilder[Int, String]
 
     // Mutable collection
-    val myArrayDeque = mutable.ArrayDeque(1,2,4,7,5)
+    val myArrayDeque = mutable.ArrayDeque(1, 2, 4, 7, 5)
     myArrayDeque.removeHead()
     println(myArrayDeque)
-    myArrayDeque.addAll(Seq(1,2,3,4))
+    myArrayDeque.addAll(Seq(1, 2, 3, 4))
 
-    val newArr = Array(1,2,3,45,4)
+    val newArr = Array(1, 2, 3, 45, 4)
     newArr :+ 3
     println(newArr.mkString("Array(", ", ", ")"))
 
     val mutableMap = collection.mutable.Map((1, 2), (3, 4))
-    mutableMap.map{case (x, y) => ( x + 1, y + 1)}
+    mutableMap.map { case (x, y) => (x + 1, y + 1) }
     println(mutableMap)
 
     mutableMap.mapValuesInPlace((x, y) => (y + 1))
 
     def getIndexTwoAndFour[T](items: IndexedSeq[T]) = (items(2), items(4))
 
-    println(getIndexTwoAndFour(Vector(1,2,3,4,5,5)))
+    println(getIndexTwoAndFour(Vector(1, 2, 3, 4, 5, 5)))
 
-    val myList = List(1,2,3,4,5)
+    val myList = List(1, 2, 3, 4, 5)
     myList(2)
 
-
-
-
-
-
+    val num: List[Int] = List(1, 2, 4, 5, 7, 8, 9)
+    println(num.partition(x => x < 4))
 
   }
 

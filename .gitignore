@@ -1,3 +1,8 @@
 out
 .idea
-.DS_Store
+*.DS_Store
+*.zip
+sample-blog
+ammonite-releases.json
+.gz
+first file.txt
