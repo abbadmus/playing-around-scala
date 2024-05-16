@@ -1,7 +1,7 @@
 package foo
 
 object ChapterSixAlgo {
-  def main2(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit = {
     println(mergeSort(Array(3, 5, 7, 2, 5, 3, 2)).mkString("Array(", ", ", ")"))
 
     println(mergeSort(Array(4,0,1,5,2,3)).mkString("Array(", ", ", ")"))

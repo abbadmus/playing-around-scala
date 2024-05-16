@@ -1,7 +1,7 @@
 package foo
 
 object NotableFeatures {
-  def main2(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit = {
 
     def getDayMonthYear(s: String) = s match {
       case s"$day-$month-$year" => println(s"found day: $day, month: $month, year: $year")

@@ -1,7 +1,7 @@
 package foo
 
 object Understanding {
-  def main2(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit = {
     val args = Seq("123", "true", "34.34")
 
     object ParseInt extends StrParser[Int] {

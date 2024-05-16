@@ -1,7 +1,7 @@
 package foo
 
 object Example {
-  def main2(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit = {
     println(hello())
 
     val multi = Array(Array(1, 2, 3), Array(4, 5, 6))
