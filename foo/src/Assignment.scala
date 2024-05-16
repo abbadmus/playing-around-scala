@@ -5,7 +5,7 @@ import scala.annotation.tailrec
 
 object Assignment {
 
-  def main(args: Array[String]): Unit = {
+  def main2(args: Array[String]): Unit = {
     // assignment 1
     def flexibleFizzBuzz(callback: String => Unit): Unit = {
 

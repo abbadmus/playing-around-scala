@@ -3,7 +3,7 @@ package foo
 import scala.collection.mutable
 
 object CollectsOps {
-  def main(args: Array[String]): Unit = {
+  def main2(args: Array[String]): Unit = {
     val arr: mutable.ArrayBuilder[Int] = Array.newBuilder[Int]
 
     arr += 1

@@ -1,5 +1,5 @@
 object UnderstandingAssignment {
-  def main(args: Array[String]): Unit = {
+  def main2(args: Array[String]): Unit = {
 
 
   }

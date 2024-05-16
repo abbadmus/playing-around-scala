@@ -1,7 +1,7 @@
 package foo
 
 object Understanding {
-  def main(args: Array[String]): Unit = {
+  def main2(args: Array[String]): Unit = {
     val args = Seq("123", "true", "34.34")
 
     object ParseInt extends StrParser[Int] {
@@ -60,13 +60,13 @@ object Understanding {
     parser.parse(s)
   }
 
-  implicit def ParseSeq[T](implicit p: StrParser[T]) = new StrParser[Seq[T]] {
+  implicit def ParseSeq[T](implicit p: StrParser[T]): StrParser[Seq[T]] = new StrParser[Seq[T]] {
     override def parse(s: String): Seq[T] = s.split(",").toSeq.map(p.parse)
   }
 
   println(parseFromStr2[Seq[Boolean]]("true,false,false,true"))
 
-  implicit def ParseTuble[T, V](implicit parser1: StrParser[T],  parser2: StrParser[V]) = new StrParser[(T, V)] {
+  implicit def ParseTuble[T, V](implicit parser1: StrParser[T],  parser2: StrParser[V]): StrParser[(T, V)] = new StrParser[(T, V)] {
     override def parse(s: String): (T, V) = {
       val Array(left, right) = s.split("=")
       (parser1.parse(left), parser2.parse(right))
